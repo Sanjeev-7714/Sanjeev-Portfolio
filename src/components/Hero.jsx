@@ -72,23 +72,44 @@ const Hero = () => {
         </div>
       )}
 
-      <div className='absolute xs:bottom-5 bottom-4 w-full flex justify-center items-center z-10'>
-        <a href='#about' aria-label="Scroll to About section">
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
-            />
-          </div>
-        </a>
-      </div>
+      {/* Only show scroll indicator if there's enough space */}
+      {isMobile ? (
+        <div className='absolute bottom-4 w-full flex justify-center items-center z-10'>
+          <a href='#about' aria-label="Scroll to About section" className='mt-[350px] xs:mt-[400px] sm:mt-[450px]'>
+            <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
+              <motion.div
+                animate={{
+                  y: [0, 24, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className='w-3 h-3 rounded-full bg-secondary mb-1'
+              />
+            </div>
+          </a>
+        </div>
+      ) : (
+        <div className='absolute bottom-10 w-full flex justify-center items-center z-10'>
+          <a href='#about' aria-label="Scroll to About section">
+            <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
+              <motion.div
+                animate={{
+                  y: [0, 24, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className='w-3 h-3 rounded-full bg-secondary mb-1'
+              />
+            </div>
+          </a>
+        </div>
+      )}
     </section>
   );
 };
