@@ -69,9 +69,9 @@ const Feedbacks = () => {
   }, []);
 
   return (
-    <div className={`${isMobile ? '-mt-6' : 'mt-0'} bg-black-100 rounded-[20px]`}>
+    <div className={`${isMobile ? '-mt-16' : 'mt-0'} bg-black-100 rounded-[20px]`}>
       <div
-        className={`bg-tertiary rounded-2xl ${styles.padding} ${isMobile ? 'min-h-[180px]' : 'min-h-[300px]'}`}
+        className={`bg-tertiary rounded-2xl ${styles.padding} ${isMobile ? 'min-h-[160px]' : 'min-h-[300px]'}`}
       >
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Life Essentials</p>
