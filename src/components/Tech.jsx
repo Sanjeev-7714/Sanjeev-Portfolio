@@ -30,7 +30,7 @@ const Tech = () => {
   }, []);
 
   return (
-    <div className={`mt-5 ${isMobile ? 'mb-0' : 'mb-10'}`}>
+    <div className={`mt-5 ${isMobile ? 'mb-0 pb-0' : 'mb-10'}`}>
       {isMobile ? (
         // Mobile view - flat grid of icons instead of 3D balls
         <div className='flex flex-wrap justify-center gap-6'>
