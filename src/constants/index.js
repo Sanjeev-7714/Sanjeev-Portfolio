@@ -24,6 +24,8 @@ import {
   tripguide,
   threejs,
   project4Image,
+  project5Image,
+  project6Image,
 } from "../assets";
 
 export const navLinks = [
@@ -295,7 +297,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "./src/assets/weather.jpg",
+    image: project5Image,
     source_code_link: "https://weather-report-gray-delta.vercel.app/",
   },
   {
@@ -316,7 +318,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "./src/assets/fruits.jpg",
+    image: project6Image,
     source_code_link: "https://fruits-mongo-db.vercel.app/",
   },
 ];

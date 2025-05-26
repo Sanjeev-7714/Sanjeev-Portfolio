@@ -31,7 +31,8 @@ import jobit from "./greenden.jpg";
 import tripguide from "./nostra.png";
 import project4Image from "./login.jpg";
 import project5Image from "./weather.jpg"; 
-// import project6Image from "./project6.jpg";
+import project6Image from "./fruits.jpg";
+import profile from "./profile.JPG";
 
 export {
   logo,
@@ -64,5 +65,6 @@ export {
   tripguide,
   project4Image,
   project5Image,
-  // project6Image,
+  project6Image,
+  profile,
 };
