@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="flex gap-6 mb-4">
             {/* Social Media Icons */}
             <a
-              href="https://github.com"
+              href="https://github.com/Sanjeev-7714"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full flex justify-center items-center border border-secondary hover:border-white hover:bg-tertiary transition-all duration-300"
@@ -30,7 +30,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/sanjeev-dev7714/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full flex justify-center items-center border border-secondary hover:border-white hover:bg-tertiary transition-all duration-300"
@@ -53,7 +53,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/ll_.sanjeev_.ll?igsh=bjcweHBwYW43ZWtn&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full flex justify-center items-center border border-secondary hover:border-white hover:bg-tertiary transition-all duration-300"
