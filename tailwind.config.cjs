@@ -17,6 +17,14 @@ module.exports = {
       },
       screens: {
         xs: "450px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        '2xl': "1536px",
+        // iPhone specific breakpoints
+        'iphone': {'min': '375px', 'max': '428px'},
+        'iphone15': {'min': '390px', 'max': '430px'},
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",

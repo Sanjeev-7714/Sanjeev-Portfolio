@@ -44,7 +44,7 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-4 sm:py-5 fixed top-0 z-[100] transition-colors duration-300 ${
+      } w-full flex items-center py-3 xs:py-4 sm:py-5 fixed top-0 z-[100] transition-colors duration-300 ${
         scrolled ? "bg-primary shadow-lg" : "bg-transparent"
       }`}
     >
@@ -60,11 +60,11 @@ const Navbar = () => {
           <img 
             src={logo} 
             alt='logo' 
-            className='w-8 h-8 sm:w-9 sm:h-9 object-contain' 
+            className='w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 object-contain' 
             width={36}
             height={36}
           />
-          <p className='text-white text-[16px] sm:text-[18px] font-bold cursor-pointer flex items-center'>
+          <p className='text-white text-[14px] xs:text-[16px] sm:text-[18px] font-bold cursor-pointer flex items-center'>
             Sanjeev &nbsp;
             <span className='sm:block hidden'> | Web Developer</span>
           </p>
@@ -96,20 +96,22 @@ const Navbar = () => {
             className='w-[28px] h-[28px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#915EFF] focus:ring-offset-2 focus:ring-offset-transparent rounded'
             onClick={() => setToggle(!toggle)}
             aria-label={toggle ? "Close menu" : "Open menu"}
+            aria-expanded={toggle}
           >
             <img
               src={toggle ? close : menu}
               alt={toggle ? "close menu" : "open menu"}
-              className='w-[24px] h-[24px] object-contain'
+              className='w-[22px] h-[22px] xs:w-[24px] xs:h-[24px] object-contain'
             />
           </button>
 
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl shadow-xl backdrop-blur-sm`}
+            } p-4 xs:p-6 black-gradient absolute top-16 xs:top-20 right-0 mx-2 xs:mx-4 my-2 min-w-[140px] z-10 rounded-xl shadow-xl backdrop-blur-sm`}
+            aria-hidden={!toggle}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-3 xs:gap-4'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
