@@ -15,59 +15,75 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  isMobile,
 }) => {
-  return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-4 xs:p-5 rounded-2xl sm:w-[360px] w-full max-w-[400px] mx-auto'
-      >
-        <div className='relative w-full h-[200px] xs:h-[230px]'>
-          <img
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
-          />
+  const cardContent = (
+    <>
+      <div className='relative w-full h-[200px] xs:h-[230px]'>
+        <img
+          src={image}
+          alt='project_image'
+          className='w-full h-full object-cover rounded-2xl'
+          loading="lazy"
+        />
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
-            </div>
+        <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+          <div
+            onClick={() => window.open(source_code_link, "_blank")}
+            className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+          >
+            <img
+              src={github}
+              alt='source code'
+              className='w-1/2 h-1/2 object-contain'
+            />
           </div>
         </div>
+      </div>
 
-        <div className='mt-4 xs:mt-5'>
-          <h3 className='text-white font-bold text-[20px] xs:text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-        </div>
+      <div className='mt-4 xs:mt-5'>
+        <h3 className='text-white font-bold text-[20px] xs:text-[24px]'>{name}</h3>
+        <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+      </div>
 
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
+      <div className='mt-4 flex flex-wrap gap-2'>
+        {tags.map((tag) => (
+          <p
+            key={`${name}-${tag.name}`}
+            className={`text-[14px] ${tag.color}`}
+          >
+            #{tag.name}
+          </p>
+        ))}
+      </div>
+    </>
+  );
+  
+  return (
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+      {isMobile ? (
+        // Static card for mobile to avoid Tilt issues
+        <div className='bg-tertiary p-4 xs:p-5 rounded-2xl sm:w-[360px] w-full max-w-[400px] mx-auto'>
+          {cardContent}
         </div>
-      </Tilt>
+      ) : (
+        // Tilt effect for desktop
+        <Tilt
+          options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}
+          className='bg-tertiary p-4 xs:p-5 rounded-2xl sm:w-[360px] w-full max-w-[400px] mx-auto'
+        >
+          {cardContent}
+        </Tilt>
+      )}
     </motion.div>
   );
 };
 
-const Works = () => {
+const Works = ({ isMobile = false }) => {
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -88,9 +104,14 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-16 xs:mt-20 flex flex-wrap justify-center gap-6 xs:gap-7'>
+      <div className='mt-12 xs:mt-16 sm:mt-20 flex flex-wrap justify-center gap-5 xs:gap-6 sm:gap-7'>
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard 
+            key={`project-${index}`} 
+            index={index} 
+            {...project} 
+            isMobile={isMobile}
+          />
         ))}
       </div>
     </>
