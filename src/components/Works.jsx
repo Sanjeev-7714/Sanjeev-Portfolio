@@ -118,4 +118,4 @@ const Works = ({ isMobile = false }) => {
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "works");
