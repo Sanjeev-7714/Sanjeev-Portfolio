@@ -6,16 +6,14 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.JPG'],
   build: {
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 1000, // Increase size limit to 1000kb
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
-          'ui-vendor': ['framer-motion', 'react-tilt', 'react-vertical-timeline-component'],
-          'email-vendor': ['@emailjs/browser']
-        }
-      }
-    }
-  }
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          // Add other third-party dependencies here if needed
+        },
+      },
+    },
+  },
 })
