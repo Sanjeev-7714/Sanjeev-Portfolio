@@ -32,7 +32,7 @@ import tripguide from "./nostra.png";
 import project4Image from "./login.jpg";
 import project5Image from "./weather.jpg"; 
 import project6Image from "./fruits.jpg";
-import profile from "./profile.JPG";
+// import profile from "./profile.JPG";
 
 export {
   logo,
@@ -66,5 +66,5 @@ export {
   project4Image,
   project5Image,
   project6Image,
-  profile,
+  // profile,
 };
