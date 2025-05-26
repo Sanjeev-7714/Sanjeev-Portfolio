@@ -1,11 +1,35 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
-    <section className={`relative w-full h-screen mx-auto overflow-hidden`}>
+    <section className={`relative w-full ${isMobile ? 'min-h-[85vh]' : 'h-screen'} mx-auto overflow-hidden`}>
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-8`}
       >
@@ -36,11 +60,14 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className='absolute inset-0 z-[-1]'>
-        <ComputersCanvas />
-      </div>
+      {/* Only show 3D model on non-mobile devices to prevent overlap */}
+      {!isMobile && (
+        <div className='absolute inset-0 z-[-1]'>
+          <ComputersCanvas />
+        </div>
+      )}
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-10'>
+      <div className='absolute xs:bottom-5 bottom-10 w-full flex justify-center items-center z-10'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
@@ -76,6 +103,13 @@ style.textContent = `
   }
   .animate-pulse-slow {
     animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  /* Add responsive styles */
+  @media (max-width: 768px) {
+    .hero-section-mobile {
+      min-height: 85vh !important;
+    }
   }
 `;
 document.head.appendChild(style);
