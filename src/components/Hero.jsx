@@ -29,7 +29,7 @@ const Hero = () => {
         <div className='relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] mt-8 lg:mt-0'>
           <div className='absolute inset-0 rounded-full bg-[#915EFF] opacity-75'></div>
           <img
-            src="./src/assets/profile.jpg"
+            src="./src/assets/profile.JPG"
             alt="profile"
             className='relative z-10 w-full h-full rounded-full border-4 border-[#915EFF] object-cover'
           />
