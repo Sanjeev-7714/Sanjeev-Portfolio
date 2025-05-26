@@ -12,7 +12,6 @@ const FeedbackCard = ({
   name,
   designation,
   company,
-  image,
   isMobile,
 }) => (
   <motion.div
@@ -24,8 +23,8 @@ const FeedbackCard = ({
     <div className='mt-1'>
       <p className={`text-white tracking-wider ${isMobile ? 'text-[16px]' : 'text-[18px]'}`}>{testimonial}</p>
 
-      <div className='mt-5 md:mt-7 flex justify-between items-center gap-1'>
-        <div className='flex-1 flex flex-col'>
+      <div className='mt-5 md:mt-7'>
+        <div className='flex flex-col'>
           <p className='text-white font-medium text-[16px]'>
             <span className='blue-text-gradient'>@</span> {name}
           </p>
@@ -33,12 +32,6 @@ const FeedbackCard = ({
             {designation} of {company}
           </p>
         </div>
-
-        <img
-          src={image}
-          alt={`feedback_by-${name}`}
-          className='w-10 h-10 rounded-full object-cover'
-        />
       </div>
     </div>
   </motion.div>
