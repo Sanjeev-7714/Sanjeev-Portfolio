@@ -22,7 +22,10 @@ module.exports = {
         lg: "1024px",
         xl: "1280px",
         '2xl': "1536px",
-        // iPhone specific breakpoints
+        // Mobile device breakpoints
+        'mobile-sm': {'min': '320px', 'max': '389px'},
+        'mobile-md': {'min': '390px', 'max': '430px'}, // 6.1-6.7 inch devices
+        'mobile-lg': {'min': '431px', 'max': '480px'},
         'iphone': {'min': '375px', 'max': '428px'},
         'iphone15': {'min': '390px', 'max': '430px'},
       },

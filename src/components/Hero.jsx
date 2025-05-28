@@ -31,30 +31,33 @@ const Hero = () => {
       return () => mediaQuery.removeListener(handleMediaQueryChange);
     }
   }, []);
+  
+  // Check if the device is a large mobile (6.1-6.7 inch screens)
+  const isLargeMobile = window.matchMedia("(min-width: 390px) and (max-width: 430px)").matches;
 
   return (
     <section className={`relative w-full ${isMobile ? 'min-h-[85vh]' : 'h-screen'} mx-auto overflow-hidden`}>
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[100px] xs:top-[120px] max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-5 md:gap-8`}
+        className={`${styles.paddingX} absolute inset-0 top-[100px] mobile-md:top-[110px] xs:top-[120px] max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-5 md:gap-8`}
       >
         <div className='relative flex flex-col items-center lg:items-start lg:flex-1 w-full'>
-          <div className='absolute left-[20px] xs:left-[-15px] sm:left-[-35px] top-[-10px] lg:top-5 flex flex-col items-center'>
+          <div className='absolute left-[20px] mobile-md:left-[-10px] xs:left-[-15px] sm:left-[-35px] top-[-10px] lg:top-5 flex flex-col items-center'>
             <div className='w-5 h-5 rounded-full bg-[#915EFF] animate-pulse-slow' />
-            <div className='w-1 sm:h-80 h-40 violet-gradient mt-2' />
+            <div className='w-1 sm:h-80 mobile-md:h-60 h-40 violet-gradient mt-2' />
           </div>
 
-          <div className='lg:pl-8 relative z-10 w-full px-2 iphone15:px-4'>
+          <div className='lg:pl-8 relative z-10 w-full px-2 mobile-md:px-3 iphone15:px-4'>
             <h1 className={`${styles.heroHeadText} text-white text-center lg:text-left`}>
               Hi, I'm <span className='text-[#915EFF]'>Sanjeev</span>
             </h1>
-            <p className={`${styles.heroSubText} mt-2 text-white-100 text-center lg:text-left`}>
+            <p className={`${styles.heroSubText} mt-2 mobile-md:mt-3 text-white-100 text-center lg:text-left`}>
               I'm a Full Stack Web Developer <br className='sm:block hidden' />
-              <span className="block xs:inline">" Code, Create, Conquer "</span>
+              <span className="block mobile-md:inline xs:inline">" Code, Create, Conquer "</span>
             </p>
           </div>
         </div>
 
-        <div className='relative w-[250px] h-[250px] xs:w-[280px] xs:h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] mt-6 lg:mt-0'>
+        <div className='relative w-[250px] h-[250px] mobile-md:w-[300px] mobile-md:h-[300px] xs:w-[280px] xs:h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] mt-6 mobile-md:mt-8 lg:mt-0'>
           <div className='absolute inset-0 rounded-full bg-[#915EFF] opacity-75'></div>
           <img
             src="./profile.JPG"

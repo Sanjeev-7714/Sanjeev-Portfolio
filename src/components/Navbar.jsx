@@ -44,7 +44,7 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-3 xs:py-4 sm:py-5 fixed top-0 z-[100] transition-colors duration-300 ${
+      } w-full flex items-center py-3 mobile-md:py-3.5 xs:py-4 sm:py-5 fixed top-0 z-[100] transition-colors duration-300 ${
         scrolled ? "bg-primary shadow-lg" : "bg-transparent"
       }`}
     >
@@ -60,13 +60,13 @@ const Navbar = () => {
           <img 
             src={logo} 
             alt='logo' 
-            className='w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 object-contain' 
+            className='w-7 h-7 mobile-md:w-8 mobile-md:h-8 xs:w-8 xs:h-8 sm:w-9 sm:h-9 object-contain' 
             width={36}
             height={36}
           />
-          <p className='text-white text-[14px] xs:text-[16px] sm:text-[18px] font-bold cursor-pointer flex items-center'>
+          <p className='text-white text-[14px] mobile-md:text-[15px] xs:text-[16px] sm:text-[18px] font-bold cursor-pointer flex items-center'>
             Sanjeev &nbsp;
-            <span className='sm:block hidden'> | Web Developer</span>
+            <span className='sm:block mobile-md:hidden hidden'> | Web Developer</span>
           </p>
         </Link>
 
@@ -93,7 +93,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           <button
-            className='w-[28px] h-[28px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#915EFF] focus:ring-offset-2 focus:ring-offset-transparent rounded'
+            className='w-[28px] h-[28px] mobile-md:w-[32px] mobile-md:h-[32px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#915EFF] focus:ring-offset-2 focus:ring-offset-transparent rounded'
             onClick={() => setToggle(!toggle)}
             aria-label={toggle ? "Close menu" : "Open menu"}
             aria-expanded={toggle}
@@ -101,21 +101,21 @@ const Navbar = () => {
             <img
               src={toggle ? close : menu}
               alt={toggle ? "close menu" : "open menu"}
-              className='w-[22px] h-[22px] xs:w-[24px] xs:h-[24px] object-contain'
+              className='w-[22px] h-[22px] mobile-md:w-[24px] mobile-md:h-[24px] xs:w-[24px] xs:h-[24px] object-contain'
             />
           </button>
 
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-4 xs:p-6 black-gradient absolute top-16 xs:top-20 right-0 mx-2 xs:mx-4 my-2 min-w-[140px] z-10 rounded-xl shadow-xl backdrop-blur-sm`}
+            } p-4 mobile-md:p-5 xs:p-6 black-gradient absolute top-16 mobile-md:top-[70px] xs:top-20 right-0 mx-2 mobile-md:mx-3 xs:mx-4 my-2 min-w-[140px] mobile-md:min-w-[160px] z-10 rounded-xl shadow-xl backdrop-blur-sm`}
             aria-hidden={!toggle}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-3 xs:gap-4'>
+            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-3 mobile-md:gap-4 xs:gap-4'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] w-full ${
+                  className={`font-poppins font-medium cursor-pointer text-[16px] mobile-md:text-[17px] w-full ${
                     active === nav.title ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {
@@ -125,7 +125,7 @@ const Navbar = () => {
                 >
                   <a 
                     href={nav.id === "home" ? "#" : `#${nav.id}`}
-                    className="block w-full px-2 py-1 rounded hover:bg-[#915EFF]/10 transition-colors duration-200 outline-none focus:ring-2 focus:ring-[#915EFF] focus:ring-offset-2 focus:ring-offset-transparent"
+                    className="block w-full px-2 py-1 mobile-md:py-1.5 rounded hover:bg-[#915EFF]/10 transition-colors duration-200 outline-none focus:ring-2 focus:ring-[#915EFF] focus:ring-offset-2 focus:ring-offset-transparent"
                   >
                     {nav.title}
                   </a>
