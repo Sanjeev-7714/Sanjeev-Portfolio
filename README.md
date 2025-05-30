@@ -117,7 +117,6 @@ A modern, interactive portfolio website built with React, Three.js and Tailwind 
 
 ### 3D Models
 
-- **Gaming Desktop PC** by [Yolala1232](https://sketchfab.com/Yolala1232) is licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
 - **Stylized planet** by [cmzw](https://sketchfab.com/cmzw) is licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## 🔗 Links
