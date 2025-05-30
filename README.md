@@ -122,8 +122,7 @@ A modern, interactive portfolio website built with React, Three.js and Tailwind 
 
 ## 🔗 Links
 
-- [Live Demo](https://your-portfolio-url.com)
-- [GitHub Repository](https://github.com/yourusername/3d-portfolio)
+- Check it out here : ( https://sanjeev-portfolio-drab.vercel.app/ )
 
 ## 📬 Contact
 
